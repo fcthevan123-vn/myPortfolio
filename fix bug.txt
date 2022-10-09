@@ -1,0 +1,5 @@
+- Cần tạo chức năng bấm vào các icon tự động đóng menu
+- Cần tạo chức năng bấm vào header của skills là đóng skills__list
+- .qualification__line không hiện
+- cần tạo chức năng bấm vào tab ở qualification là đóng mở
+- Sửa lại phần thông tin cá nhân
