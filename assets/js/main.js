@@ -3,11 +3,14 @@
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
+const switchColorContainer = document.querySelector('.switchcolor__container')
+
 
 // Menu show
 if (navToggle){
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
+        switchColorContainer.classList.toggle('switchcolor__close');
     });
 }
 
@@ -15,6 +18,7 @@ if (navToggle){
 if (navClose){
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
+        switchColorContainer.classList.toggle('switchcolor__close');
     });
 }
 
@@ -84,3 +88,25 @@ closeBtn.forEach((i, e) => {
         servicesModal[e].classList.remove('services-show');
     });
 })
+
+//Change color
+const colorTitles = document.querySelectorAll('.color__title');
+console.log(colorTitles);
+
+const mainColor = window.getComputedStyle(document.documentElement).getPropertyValue('--hue-color');
+
+
+colorTitles.forEach((i, e) => {
+    i.addEventListener('click', () => {
+        if (colorTitles[e].classList.contains('purple')){
+            document.documentElement.style.setProperty('--hue-color', '250');
+        }else if (colorTitles[e].classList.contains('green')){
+            document.documentElement.style.setProperty('--hue-color', '142');
+        }else if (colorTitles[e].classList.contains('blue')){
+            document.documentElement.style.setProperty('--hue-color', '230');
+        }else if (colorTitles[e].classList.contains('pink')){
+            document.documentElement.style.setProperty('--hue-color', '340');
+        }
+    });
+})
+
